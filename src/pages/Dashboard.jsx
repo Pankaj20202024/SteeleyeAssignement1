@@ -20,6 +20,8 @@ const Dashboard = () => {
   const [selectedOrderDetails, setSelectedOrderDetails] = useState({});
   const [selectedOrderTimeStamps, setSelectedOrderTimeStamps] = useState({});
 
+  // Below code is for merging the timestamps array of timestamps.json with the corresponding order of result array of  dataWithTimestamps.json file
+
   const mergeTimestampsWithOrders = () => {
     const mergedData = mockData.results.map((order, index) => {
       const timestampsData = timestamps.results[index]?.timestamps;
@@ -53,7 +55,7 @@ const Dashboard = () => {
       <div className={styles.header}>
         <HeaderTitle
           primaryTitle="Orders"
-          secondaryTitle={mockData.header.returnedHits + " orders"}
+          secondaryTitle={`${mockData.results.length} orders`}
         />
         <div className={styles.actionBox}>
           <Search

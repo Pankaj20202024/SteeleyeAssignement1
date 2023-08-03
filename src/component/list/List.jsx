@@ -11,7 +11,7 @@ import { useState } from "react";
 const List = ({ rows, SelectedCurrency, searchText, onRowSelect }) => {
   const filteredRows = searchText
     ? rows.filter((row) =>
-        row["&id"].toLowerCase().includes(searchText.toLowerCase())
+        row["&id"].includes(searchText)
       )
     : rows;
 
